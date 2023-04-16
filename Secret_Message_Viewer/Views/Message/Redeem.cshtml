@@ -1,0 +1,53 @@
+﻿@model Secret_Message_Viewer.Models.Message;
+@{
+    ViewBag.Title = "Device Details"; Layout = null;
+}
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - DeviceOnLoan_WebApp</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/DeviceOnLoan_WebApp.styles.css" asp-append-version="true" />
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+
+        <a class="navbar-brand">
+            Secret Message
+        </a>
+
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item ">
+                    <a class="nav-link" href="/message/create">Create</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/message/redeem">Redeem</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="container-fluid">
+        <form asp-action="Read" enctype="multipart/form-data">
+            <div class="form-group">
+                <label>Key : </label>
+                <input asp-for="Id" class="form-control" style="width:50%; height:30%;" />
+            </div>
+            <div style="padding-top:2rem;">
+                <button type="submit" class="btn btn-sm btn-primary"> Read </button>
+            </div>
+        </form>
+    </div>
+
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+
